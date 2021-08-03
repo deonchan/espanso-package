@@ -4,26 +4,29 @@ name: deons-simple-package
 parent: default
 
 matches:
-  - triggers: [":block:", ":mb:"]
-    replace: |-
-        ```$|$
-        ```
-    #force_clipboard: true
-    
-- triggers: [":collapse:", ":mcol:"]
-    replace: "<details><summary>$|$</summary><br>
-        <p><br>
-
-        </p><br>
-        </details>\n"
+    - triggers: [":block:", ":mb:"]
+      replace: "<blockquote>$|$</blockquote>\n"
         
-- triggers: [":asi:", ":aside:"]
-    replace: "<s class=\"aside-hide\">$|$<br></s>\n"
-   
-- triggers: [":adm:", ":admonition:"]
-    replace: "```ad-note<br>
-        title:<br>
-        $|$<br>
-        ```\n"
-  
+    - trigger: ":im:"
+      replace: "![[{{clipboard}}|250]]  \n" 
+      vars:
+      - name: "clipboard"
+        type: "clipboard"
+
+    - triggers: [":collapse:", ":mcol:"]
+      replace: "<details><summary>$|$</summary>  \n
+          <p>  \n
+
+          </p>  \n
+          </details>  \n"
+
+    - triggers: [":asi:", ":aside:"]
+      replace: "<s class=\"aside-hide\">$|$<br></s>\n"
+
+    - triggers: [":adm:", ":admonition:"]
+      replace: "```ad-note<br>
+          title:<br>
+          $|$<br>
+          ```\n"
+
 

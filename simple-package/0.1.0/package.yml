@@ -8,7 +8,7 @@ matches:
     replace: |-
         ```$|$
         ```
-    force_clipboard: true
+    #force_clipboard: true
     
  - triggers: [":collapse:", ":mcol:"]
     replace: |-
@@ -17,7 +17,7 @@ matches:
 
         </p><br>
         </details>
-    force_clipboard: true   
+    #force_clipboard: true   
 
 - triggers: [":adm:",":admonition:"]
     replace: |-
@@ -25,7 +25,5 @@ matches:
         title:<br>
         $|$<br>
         ```
-    force_clipboard: true
+    #force_clipboard: true
 
-  - trigger: ":block"
-    replace: "hello world"

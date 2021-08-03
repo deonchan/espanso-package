@@ -26,4 +26,8 @@ matches:
         $|$<br>
         ```
     #force_clipboard: true
+    
+- triggers: [":asi:",":aside:"]
+  replace: "<s class="aside-hide">$|$<br></s>\n"
+  
 

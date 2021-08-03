@@ -10,24 +10,20 @@ matches:
         ```
     #force_clipboard: true
     
- - triggers: [":collapse:", ":mcol:"]
-    replace: |-
-        <details><summary>$|$</summary><br>
+- triggers: [":collapse:", ":mcol:"]
+    replace: "<details><summary>$|$</summary><br>
         <p><br>
 
         </p><br>
-        </details>
-    #force_clipboard: true   
-
-- triggers: [":adm:",":admonition:"]
-    replace: |-
-        ```ad-note<br>
+        </details>\n"
+        
+- triggers: [":asi:", ":aside:"]
+    replace: "<s class=\"aside-hide\">$|$<br></s>\n"
+   
+- triggers: [":adm:", ":admonition:"]
+    replace: "```ad-note<br>
         title:<br>
         $|$<br>
-        ```
-    #force_clipboard: true
-    
-- triggers: [":asi:",":aside:"]
-  replace: "<s class="aside-hide">$|$<br></s>\n"
+        ```\n"
   
 

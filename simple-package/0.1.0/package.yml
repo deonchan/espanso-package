@@ -1,8 +1,31 @@
 # Simple package
 
-name: simple-package 
+name: deons-simple-package 
 parent: default
 
 matches:
-  - trigger: ":hw"
+  - triggers: [":block:", ":mb:"]
+    replace: |-
+        ```$|$
+        ```
+    force_clipboard: true
+    
+ - triggers: [":collapse:", ":mcol:"]
+    replace: |-
+        <details><summary>$|$</summary><br>
+        <p><br>
+
+        </p><br>
+        </details>
+    force_clipboard: true   
+
+- triggers: [":adm:",":admonition:"]
+    replace: |-
+        ```ad-note<br>
+        title:<br>
+        $|$<br>
+        ```
+    force_clipboard: true
+
+  - trigger: ":block"
     replace: "hello world"

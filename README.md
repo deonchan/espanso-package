@@ -9,5 +9,5 @@ For more information, read the [documentation](https://espanso.org/docs/)
 :asi:
 :mb:
 :mcol:
-:imi: *clipboard*
+:im: *clipboard*
 ```

@@ -1,5 +1,5 @@
 ---
-package_name: "simple-package"
+package_name: "deons-simple-package"
 package_title: "Dee's Package"
 package_desc: "A simple package to say Hello World."
 package_version: "0.1.0"

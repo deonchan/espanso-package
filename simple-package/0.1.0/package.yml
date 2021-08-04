@@ -1,6 +1,6 @@
 # Simple package
 
-name: deons-simple-package 
+name: simple-package 
 parent: default
 
 matches:

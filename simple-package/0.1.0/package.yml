@@ -4,44 +4,42 @@ name: simple-package
 parent: default
 
 matches:
-    - triggers: [":block:", ":mb:"]
-      replace: "<blockquote>$|$</blockquote>\n"
+  - triggers: [":block:", ":mb:"]
+    replace: "<blockquote>$|$</blockquote>\n"
+      
+  - trigger: ":im:"
+    replace: "![[{{clipboard}}|250]]  \n" 
+    vars:
+    - name: "clipboard"
+      type: "clipboard"
+
+  - triggers: [":collapse:", ":mcol:"]
+    replace: "<details><summary>$|$</summary>  \n
+        <p>  \n
+        </p>  \n
+        </details>  \n"
+
+  - triggers: [":asi:", ":aside:"]
+    replace: "<s class=\"aside-hide\">$|$<br></s>\n"
+
+  - triggers: [":adm:", ":admonition:"]
+    replace: "```ad-note<br>
+        title:<br>
+        $|$<br>
+        ```\n"
         
-    - trigger: ":im:"
-      replace: "![[{{clipboard}}|250]]  \n" 
-      vars:
-      - name: "clipboard"
-        type: "clipboard"
-
-    - triggers: [":collapse:", ":mcol:"]
-      replace: "<details><summary>$|$</summary>  \n
-          <p>  \n
-
-          </p>  \n
-          </details>  \n"
-
-    - triggers: [":asi:", ":aside:"]
-      replace: "<s class=\"aside-hide\">$|$<br></s>\n"
-
-    - triggers: [":adm:", ":admonition:"]
-      replace: "```ad-note<br>
-          title:<br>
-          $|$<br>
-          ```\n"
-          
-    - trigger: ":e:" 
-      form: |
-            {{choices}}
-      form_fields:
-      choices:
-        type: list
-        values:
-          - deon.chan@arrow.com
-          - deon.chan1993@gmail.com
-          - ecsanz.orders@arrow.com
-          - ecsanz.licensingeta@arrow.com
-          - ecsanz.renewals@arrow.com
-          - ecsanz.omarchiving@arrow.com
-          - ecsanz.purchasing@arrow.com
-
+  - trigger: ":email"
+    form: "{{description}}"
+    form_fields:
+     description:
+      type: choice
+      values: 
+        - deon.chan@arrow.com 
+        - deon.chan1993@gmail.com 
+        - ecsanz.orders@arrow.com 
+        - ecsanz.licensingeta@arrow.com
+        - ecsanz.renewals@arrow.com
+        - ecsanz.omarchiving@arrow.com
+        - ecsanz.purchasing@arrow.com
+       
 

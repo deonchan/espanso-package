@@ -4,31 +4,34 @@ name: simple-package
 parent: default
 
 matches:
-  - triggers: [":block:", ":mb:"]
-    replace: "<blockquote>$|$</blockquote>\n"
+  - triggers: ["::block", "::mb"]
+    replace: "<blockquote>$|$</blockquote>"
       
-  - trigger: ":im:"
-    replace: "![[{{clipboard}}|250]]  \n" 
+  - trigger: "::im"
+    replace: "![[{{clipboard}}|250]]" 
     vars:
     - name: "clipboard"
       type: "clipboard"
 
-  - triggers: [":collapse:", ":mcol:"]
+  - triggers: ["::collapse:", "::mcol"]
     replace: "<details><summary>$|$</summary>  \n
-        <p>  \n
-        </p>  \n
-        </details>  \n"
+        <p>\n
+        </p>\n
+        </details>\n"
 
-  - triggers: [":asi:", ":aside:"]
-    replace: "<s class=\"aside-hide\">$|$<br></s>\n"
+  - triggers: ["::asi", "::aside"]
+    replace: "<s class=\"aside-hide\">$|$\n</s>\n"
 
-  - triggers: [":adm:", ":admonition:"]
-    replace: "```ad-note<br>
-        title:<br>
-        $|$<br>
+  - triggers: ["::adm", ":admonition"]
+    replace: "```ad-note\n
+        title:\n
+        $|$\n
         ```\n"
         
-  - trigger: ":email"
+  - trigger: "::$nl"
+    replace: "\n"
+        
+  - trigger: "::@e"
     form: "{{description}}"
     form_fields:
      description:

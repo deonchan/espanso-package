@@ -1,0 +1,18 @@
+# Simple package
+
+name: deons-simple-package
+parent: default
+
+matches:
+    - trigger: "::show"
+      replace: |
+          ::: item { data-houdini data-houdini-button='Show More' id='' }
+              {{clipboard}}
+
+      vars:
+          - name: "clipboard"
+            type: "clipboard"
+
+::: item { data-houdini data-houdini-button='Show More' id=''
+    test
+
